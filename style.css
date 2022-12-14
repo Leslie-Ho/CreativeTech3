@@ -94,6 +94,42 @@ hr.none {
     padding-bottom: 4px;
 }
 
+.shadersList {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: top;
+    list-style: none;
+
+    padding: 0px;
+    flex: none;
+}
+
+.shaderItem {
+    flex: 1;
+    margin: 16px;
+    background-size: cover;
+    
+    height: 300px;
+}
+
+.shaderItem:hover .shaderDescription{
+    opacity: 1.0;
+}
+
+.shaderDescription {
+    opacity: 0;
+    transition: .1s ease-in-out;
+    vertical-align: middle;
+    display: table-cell;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    list-style: none;
+    padding: 32px;
+    background-color: black;
+}
+
 .wrapper-highlights {
     cursor: pointer;
     display: grid;
