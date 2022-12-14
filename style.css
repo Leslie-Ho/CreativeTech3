@@ -1,0 +1,17 @@
+@import url(type.css);
+
+@import url(type.css);
+
+body {
+    margin: 0;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+
+.titleHeader {
+    margin: 16px;
+}
+
+html {
+    background-color: var(--background);
+}
