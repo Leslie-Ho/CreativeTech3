@@ -19,5 +19,117 @@
         </div>
         <hr class="solid">
     </header>
+    <div style="background-image: url('./images/Birds/bird_move1.gif'); background-size: cover; height: 600px; margin: 16px;"></div>
+    <h2 class="bodyText"> Info</h2>
+     <ul class="horizontalList">
+        <li class="horizontalItem">
+            <bodyDark>
+                Construct three electronic beings capable of perceiving some aspects of the environment around them. Use whatever sensors are necessary to create their "worldview." Then connect them into a network that would enable them to communicate their findings, and respond to the communications of their counterparts.
+            </bodyDark>
+        </li>
+        <li class="horizontalItem">
+            <ul class="verticalList">
+                <li class="verticalItem"><bodyDark>Collaborators: Giah Kim, Mary Zhang</bodyDark></li>
+                <li class="verticalItem"><bodyDark>Process: Code, Prototyping</bodyDark></li>
+                <li class="verticalItem"><bodyDark>Tools: Arduino</bodyDark></li>
+                <li class="verticalItem"><bodyDark>Github: <a href="https://github.com/Leslie-Ho/CreativeTech3/tree/main/ref/birds"> Code</a></bodyDark></li>            
+            </ul>
+        </li>
+    </ul>
+    <hr class="solid">
+    <div class="bodyText">
+        <h2>Process</h2>
+        <bodyDark>
+            Giah, Mary, and I wanted to create a fun prototype with birds that would move based on an external sensor. Like birds in a flock, the first bird would react using a sensor and the following birds would react to the ones that preceed it. 
+        </bodyDark>
+        <hr class="none">
+        <bodyDark>
+            When building out this project, the three of us divided the work into ideation/sketches and physical prototyping (Giah), networking and logic (myself), and physical computing (Mary). Working together, we bounced ideas off one another to allow each of our sections to work. 
+        </bodyDark>
+    </div>
+    <div style="background-image: url('./images/Birds/bird_prototype.png'); background-size: cover; height: 1100px; margin: 0px;"></div>
+    <div class="bodyText">
+        <bodyDark>
+            Our initial designs had some general assumptions of movement. The first bird needed to sense some external factor (distance), the three birds needed to move up and down, and the physical structure needed to be vertical to allow this type of movement. Giah designed the intial structures and iterated and updated the structure throughout the process. I combined the components of the bird together (board, sensor, motors) and Giah redesigned the physical prototype that would hold the birds.
+        </bodyDark>
+        <hr class="none">
+        <bodyDark>
+            The first thing I had to get running was the Arduino’s talking to one another. Using IO feed, I started with arbitrary numbers for the Arduino’s to publish and subscribe and eventually added in a light sensor to check if the changing numbers reflected accurately between the feeds. Once Mary got the power working for the distance sensor, I swapped out the light sensor for the distance and built out logic for the motor run forward and reverse depending on sensed proximity. When Giah got the physical prototype together, we were able to fine tune the movements of the birds. 
+        </bodyDark>
+        <hr class="none">
+        <bodyDark>
+            Mary began with getting the motors to work on the Arduinos. The motor set up was mostly smooth with Arduino’s boilerplate code, steppers, and an external battery. The distance sensor, however, needed a 5v power source and our Esp32 Feathers could only support 3v. She was able to create a workaround by stripping a usb cable and supplying a 5v power directly to the sensor. Mary worked out the kinks of the motors and power and figured out issues with the motor related to code upload.
+        </bodyDark>
+    </div>
+    <ul class="horizontalList">
+        <li class="horizontalItem">
+            <div style="background-image: url('./images/Birds/bird_initialBox.jpeg'); background-size: cover; height: 600px; margin: 0px;"></div>
+        </li>
+        <li class="horizontalItem">
+            <div style="background-image: url('./images/Birds/bird_motorSpin.gif'); background-size: cover; height: 600px; margin: 0px;"></div>
+        </li>
+        <li class="horizontalItem">
+            <div style="background-image: url('./images/Birds/bird_crane.gif'); background-size: cover; height: 600px; margin: 0px;"></div>
+        </li>
+    </ul>
+    <div class="bodyText">
+        <h2>Troubleshooting</h2>
+        <bodyDark>
+            A large portion of our trouble revolved around the hardware of the Arduino combined with the motor. More often than not the motors would work one day and have trouble the next and a large portion of our time was spent troubleshooting why yesterdays code wasn’t working the next day.
+        </bodyDark>
+        <hr class="none">
+        <bodyDark>
+            During the process we learned that:
+        </bodyDark>
+        <div class="bodyText">
+            <ul class="verticalList">
+                <li class="verticalItem">
+                    <bodyDark>
+                        - we don’t need a logic level converter for a distance sensor, a stripped USB cable was able to power the sensor
+                    </bodyDark>
+                </li>
+                <li class="verticalItem">
+                    <bodyDark>
+                        - when using the stepper + stripped USB for power + distance sensor, the 3V and 5V worked best when both were plugged into the same laptop
+                    </bodyDark>
+                </li>
+                <li class="verticalItem">
+                    <bodyDark>
+                        - when using the motor and reuploading code, if the motor stops working its best to reset the Arduino and then reupload the code, or as Mary says “blow its nose”
+                    </bodyDark>
+                </li>
+                <li class="verticalItem">
+                    <bodyDark>
+                        - when using the motor, the weight of the object it pulls needs to be heavy enough to not wildly fly out of control but light enough that the motor can pull it up and down
+                    </bodyDark>
+                </li>
+                <li class="verticalItem">
+                    <bodyDark>
+                        - instead of using a delay when sending out data to IOFeed, each bird can hold its own internal counter when sending out position data and avoid motors moving continuously during delays
+                    </bodyDark>
+                </li>
+            </ul>
+        </div>
+    </div>
+<ul class="horizontalList">
+    <li class="horizontalItem">
+        <div style="background-image: url('./images/Birds/bird_openBox.gif'); background-size: cover; height: 400px; margin: 0px;"></div>
+    </li>
+    <li class="horizontalItem">
+        <div style="background-image: url('./images/Birds/bird_OpenBox2.gif'); background-size: cover; height: 800px; margin: 0px;"></div>
+    </li>
+</ul>
+<div class="bodyText">
+    <h2>Reflections</h2>
+    <bodyDark>
+        By using the process we created, the project has the ability to be extended out to as many birds as possible, as long as each bird had the required components to operate (IO Feed, Arduino, power source, motors). The project involved a lot of heartache from finding out about hardware limitations but was a good learning experience that combined the knowledges of my group members. 
+    </bodyDark>
+</div>
+<div style="background-image: url('./images/Birds/bird_floating.gif'); background-size: cover; height: 800px; margin: 0px;"></div>
 </body>
+<footer>
+    <div onclick = "location.href='index.html';" class="banner">
+        <body class = "lightFont">CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK </body>
+    </div>
+</footer>
 </html>
