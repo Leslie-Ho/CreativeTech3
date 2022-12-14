@@ -20,6 +20,7 @@
         <hr class="solid">
     </header>
     <div class="bodyText">
+        <div style="background-image: url('./images/Kludge/kludge_sample1.gif'); background-size: cover; height: 600px; margin: 16px;"></div>
         <h2 class="bodyText"> Info</h2>
         <ul class="horizontalList">
             <li class="horizontalItem">
@@ -32,9 +33,95 @@
                     <li class="verticalItem"><bodyDark>Collaborator: Minzy Li</bodyDark></li>
                     <li class="verticalItem"><bodyDark>Process: Physical Computing, Prototyping</bodyDark></li>
                     <li class="verticalItem"><bodyDark>Tools: Arduino</bodyDark></li>
+                    <li class="verticalItem"><bodyDark>Github: Code</bodyDark></li>
                 </ul>
             </li>
         </ul>
+        <hr class="solid">
+        <div class="bodyText">
+            <h2>Process</h2>
+            <bodyDark>
+                In this project, Minzy and I brainstormed projects that we were both interested and came up with an interactive anthropomorphized room. This stemmed from my interest in reactive exhibitions and Minzy’s in emotional interactions with inanimate forms.
+            </bodyDark>
+            <hr class="none">
+            <bodyDark>
+                We sketched out a few aspects for what this exhibit would look like and narrowed down the part we would like to prototype to the entrance/exit mechanism.
+            </bodyDark>
+            
+            
+        </div>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_intialSketches.png'); background-size: cover; height: 800px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <ul class="verticalList">
+                    <li class="verticalItem">
+                        <div style="background-image: url('./images/Kludge/kludge_fullSystem.jpeg'); background-size: cover; height: 400px; margin: 0px;"></div>
+                    </li>
+                    <li class="verticalItem">
+                        <div style="background-image: url('./images/Kludge/kludge_roomDetectionSystem.jpeg'); background-size: cover; height: 400px; margin: 0px;"></div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="bodyText">
+            <bodyDark>
+                Once we narrowed the prototype to entrance and exit, we decided on using distance sensors to detect movement in and out of a room. We sketched out a quick idea of what the sensors would look at and included aspects of calibration as well so the sensor could be reoriented regardless of how uneven the base distances were for each sensor.
+            </bodyDark>
+        </div>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_sketch1.png'); background-size: cover; height: 800px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_sketch2.png'); background-size: cover; height: 800px; margin: 0px;"></div>
+            </li>
+        </ul>
+        <div class="bodyText">
+            <bodyDark>
+                Using Arduino, we created a sensor that could count the number of current visitors in the room. We used two distance sensors to determine whether someone was on their way in or out.
+            </bodyDark>
+        </div>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_ard1.jpeg'); background-size: cover; height: 400px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_ard2.jpeg'); background-size: cover; height: 400px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_ard3.jpeg'); background-size: cover; height: 400px; margin: 0px;"></div>
+            </li>
+        </ul>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_ard4.jpeg'); background-size: cover; height: 400px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Kludge/kludge_ard5.jpeg'); background-size: cover; height: 400px; margin: 0px;"></div>
+            </li>
+        </ul>
+        <div class="bodyText">
+            <bodyDark>
+                We were able to get the system to capture an increase of visitors when one sensor had a lower value and decrease when the other sensor had a lower value. This was a simple solution but caused some issues when the system happen to miss someone walking past the first sensor and catching the second, causing a miscount in visitors. 
+            </bodyDark>
+            <h2>Next Steps</h2>
+            <bodyDark>
+                For future improvements to refine the counting mechanism, we would need to implement a timer system to improve directionality of movement. The current system we built only looked at the values of the distance sensors to determine if someone was walking in one direction or the other. To improve this, we would need to add in an check for when a person has triggered one sensor and if they pass the other sensor within a time period. 
+            </bodyDark>
+        </div>
+        <ul class="horizontalList">
+            <li class="horizontalItem"><div style="width: 200px;"></div></li>
+            <li class="horizontalItem"><div style="background-image: url('./images/Kludge/kludge_pseudoFix.jpg'); background-size: cover; height: 600px; margin: 24px;"></div></li>
+            <li class="horizontalItem"><div style="width: 200px;"></div></li>
+        </ul>
+        
     </div>
 </body>
+<footer>
+    <div onclick = "location.href='index.html';" class="banner">
+        <body class = "lightFont">CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK </body>
+    </div>
+</footer>
 </html>

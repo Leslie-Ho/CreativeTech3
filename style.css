@@ -11,7 +11,7 @@ body {
 }
 
 .bodyText {
-    margin-left: 16px
+    margin: 16px
 }
 
 img {
@@ -34,6 +34,10 @@ hr.solid {
     border-top: 40px;
     border-color: var(--hotPink);
 }
+hr.none {
+    border: 0px;
+    border-color: var(--background);
+}
 
 .banner {
     cursor:pointer;
@@ -49,6 +53,12 @@ hr.solid {
     overflow: hidden;
     white-space: nowrap;
 }
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
 
 .horizontalList {
     display: flex;
