@@ -19,5 +19,108 @@
         </div>
         <hr class="solid">
     </header>
+    <div style="background-image: url('./images/Burning/burn_sideView.gif'); background-size: cover; height: 600px; margin: 16px;"></div>
+        <h2 class="bodyText"> Info</h2>
+        <div class="bodyText"><bodyDark>Interact with Unity <a href="https://play.unity.com/mg/other/fireburn_unitywebbuild">here</a></bodyDark></div>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <bodyDark>
+                    For this project, create a vivarium: a micro-world where a defined set of properties and behaviors are placed and developed. Use the assigned verb: BURNING, inspired by a current global crisis nearing a tipping point.
+                </bodyDark>
+            </li>
+            <li class="horizontalItem">
+                <ul class="verticalList">
+                    <li class="verticalItem"><bodyDark>Process: Code, Worldbuilding</bodyDark></li>
+                    <li class="verticalItem"><bodyDark>Tools: Unity</bodyDark></li>
+                    <li class="verticalItem"><bodyDark>Github: <a href="https://github.com/Leslie-Ho/CreativeTech3/tree/main/ref/burningScripts"> Code</a></bodyDark></li>
+                    
+                </ul>
+            </li>
+        </ul>
+        <hr class="solid">
+        <div class="bodyText">
+            <h2>Process</h2>
+            <bodyDark>
+                When prompted with “burning”, my immediate reaction was forest fires. I imagined a scene where something could trigger a chain reaction amongst the trees and broke down the scene into a few essential pieces:
+            </bodyDark>
+            <ul class="verticalList">
+                <li><bodyDark>- the object that triggers a fire</bodyDark></li>
+                <li><bodyDark>- the tree that burns</bodyDark></li>
+                <li><bodyDark>- the terrain the tree grows on</bodyDark></li>
+            </ul>
+            <hr class="none">
+            <bodyDark>
+                I started with the building the tree itself. Before getting into models, I used a cube to work out the logic of the trees, from color and size to what it looks like when burning. Initially, I was excited to use emitters since it was a built in function of Unity. I attached the emitters to the trees which gave the visual effect I was looking for.
+            </bodyDark>
+            <hr class="none">
+            <bodyDark>
+                Upon adding in emitters, I realized soon that my computer couldn’t handle multiple trees with emitters, let alone a forest of trees. I tested a few ideas and landed on the most basic way to show fire: movement and color. I wanted a red, orange, and yellow “fire” and a wiggling motion and the most efficient solution was to make 3 spheres and have them circle around the tree.
+            </bodyDark>   
+        </div>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Burning/burn_initialEmitter.gif'); background-size: cover; height: 800px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Burning/burn_fireCube.png'); background-size: cover; height: 800px; margin: 0px;"></div>
+            </li>
+        </ul>
+        <div class="bodyText">
+            <bodyDark>
+                The next thing to add was showing a tree on fire. I started with having the tree change color over time and in later iterations added shrinking over time. 
+            </bodyDark>
+            <hr class="none">
+            <bodyDark>
+                The last thing the tree needed was a trigger to start the fire. At first I added in a bool tag to check if the object was on fire or not. In ideating on the scene, I decided I wanted more than just burnable objects that are spawned in (like rocks and rivers) so I moved the check into an external check using the tags system. The trees itself still needed an internal bool for isBurned so they wouldn’t continuously catch on fire after they burned. Though I ended up not using non-burnable objects in the scenes like rocks, the tag helped simplify building the trigger for the fire (match) since I simply needed to switch the object to isBurning to trigger the fire. A slight delay was added before the tree began burning so all the trees wouldn’t light up at once.
+            </bodyDark>
+        </div>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Burning/burn_cubeToCube.gif'); background-size: cover; height: 800px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Burning/burn_cubeToTree.gif'); background-size: cover; height: 800px; margin: 0px;"></div>
+            </li>
+        </ul>
+        <div class="bodyText">
+            <bodyDark>
+                As mentioned earlier, the match was straightforward since the onFire/notOnFire tags covered most of the burning logic. I built a spawner on the match to drop from a random space above the landscape area whenever the enter button was pressed.
+            </bodyDark>
+            <hr class="none">
+            <bodyDark>
+                Since I didn’t want to manually add in thousands of trees into the scene, I built a spawner that spawned whatever objects onto the terrain of the map. Using raycasting, the trees spawned directly on top of the terrain and respawned a few thousand more whenever the space bar was pressed.
+            </bodyDark>
+            <hr class="none">
+            <bodyDark>
+                Last, to show multiple camera views, I attached a camera switch script when “c” is pressed. 
+            </bodyDark>
+        </div>
+        <ul class="horizontalList">
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Burning/burn_landscape1.png'); background-size: cover; height: 300px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Burning/burn_landscape2.png'); background-size: cover; height: 300px; margin: 0px;"></div>
+            </li>
+            <li class="horizontalItem">
+                <div style="background-image: url('./images/Burning/burn_landscape3.png'); background-size: cover; height: 300px; margin: 0px;"></div>
+            </li>
+        </ul>
+        <div class="bodyText">
+            <h2>Reflections</h2>
+            <bodyDark>
+                I was able to learn a lot from this first Unity project. I found Unity to be a fun merging of my code and 3D experience and was able to build a lot more than I had initially expected. If I was to continue improving this project, I want to build out a small snow-globe environment that allows users to rotate the scene around and influence the shape of the fire’s movement. 
+            </bodyDark>
+            <hr class="none">
+            <bodyDark>
+                Check out a live demo of this Unity project <a href="https://play.unity.com/mg/other/fireburn_unitywebbuild"> here</a> 
+            </bodyDark>
+        </div>
+        <div style="background-image: url('./images/Burning/burn_topView.gif'); background-size: cover; height: 600px; margin: 16px;"></div>
 </body>
+<footer>
+    <div onclick = "location.href='index.html';" class="banner">
+        <body class = "lightFont">CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK · CLICK HERE TO GO BACK </body>
+    </div>
+</footer>
 </html>
