@@ -16,7 +16,7 @@ h1 {
 
 h2 {
     font-size: 24px;
-    line-height: 32px;
+    line-height: 24px;
     color: var(--hotPink);
 }
 
@@ -24,6 +24,12 @@ h3 {
     font-size: 12px;
     line-height: 16px;
     color: var(--lightGray);
+}
+
+bodyDark {
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--darkGray);
 }
 
 body {
