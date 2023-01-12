@@ -22,14 +22,6 @@ public class SpawnObjects : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-
-            //for (int i = 0; i < numObjectsSpawned; i++)
-            //{
-            //    int randomIndex = Random.Range(0, myObjects.Length);
-            //    Vector3 randomSpawnPosition = new Vector3(Random.Range(-25, 25), 2, Random.Range(-25, 25));
-
-            //    Instantiate(myObjects[randomIndex], randomSpawnPosition, Quaternion.identity);
-            //}
             SpawnPrefab();
         }
     }
